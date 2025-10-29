@@ -1,0 +1,120 @@
+
+:root {
+    --bg: #0a0a0f;
+    --card-bg: rgba(255, 255, 255, 0.08);
+    --accent: #4fc3f7;
+    --accent-2: #a29bfe;
+    --text: #e0e0ff;
+    --radius: 12px;
+    --blur: 18px;
+    --transition: 0.3s ease;
+  }
+  
+  body {
+    font-family: 'Orbitron', 'Segoe UI', sans-serif;
+    background: radial-gradient(circle at top right, #1b1b2f, #0a0a0f);
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+
+  .container {
+    background: var(--card-bg);
+    backdrop-filter: blur(var(--blur));
+    border-radius: var(--radius);
+    padding: 40px;
+    width: 420px;
+    box-shadow: 0 0 30px rgba(79,195,247,0.2);
+    animation: fadeIn 0.8s ease;
+  }
+  
+
+  h2 {
+    text-align: center;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+  }
+  
+
+  label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #9cc3ff;
+    text-shadow: 0 0 6px rgba(79,195,247,0.4);
+    font-size: 0.95rem;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px 14px;
+    border-radius: var(--radius);
+    border: 1px solid rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.05);
+    color: var(--text);
+    font-size: 15px;
+    margin-bottom: 18px;
+    transition: var(--transition);
+  }
+  
+  input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 10px rgba(79,195,247,0.4);
+    outline: none;
+  }
+  
+
+  button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: var(--radius);
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: 0 0 15px rgba(79,195,247,0.4);
+  }
+  
+  button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 25px rgba(79,195,247,0.8);
+  }
+  
+
+  .alert {
+    background: rgba(255,255,255,0.08);
+    color: #ffbaba;
+    border-left: 3px solid #ff7675;
+    padding: 10px 15px;
+    border-radius: var(--radius);
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+  }
+
+  .text-center a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: var(--transition);
+  }
+  
+  .text-center a:hover {
+    color: var(--accent-2);
+    text-shadow: 0 0 8px var(--accent);
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
