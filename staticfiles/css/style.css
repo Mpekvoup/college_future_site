@@ -1,0 +1,217 @@
+:root {
+  --bg: #0a0a0f;
+  --card-bg: rgba(255, 255, 255, 0.08);
+  --text: #e0e0ff;
+  --accent: #4fc3f7;
+  --accent-2: #a29bfe;
+  --danger: #ff7675;
+  --radius: 12px;
+  --blur: 18px;
+  --transition: 0.3s ease;
+}
+
+body {
+  font-family: 'Orbitron', 'Segoe UI', sans-serif;
+  background: radial-gradient(circle at top right, #1b1b2f, #0a0a0f);
+  color: var(--text);
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 0 25px;
+}
+
+
+h1 {
+  text-align: center;
+  font-size: 2.2em;
+  letter-spacing: 1px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 30px;
+}
+
+
+.action-buttons {
+  display: flex;
+  align-items: center;      
+  justify-content: flex-start;
+  gap: 10px;                 
+  flex-wrap: nowrap;        
+}
+
+.action-buttons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 14px;
+  min-width: 110px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.container, .edit-container {
+  background: var(--card-bg);
+  backdrop-filter: blur(var(--blur));
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius);
+  box-shadow: 0 0 25px rgba(79, 195, 247, 0.1);
+  padding: 35px;
+  transition: var(--transition);
+}
+
+.container:hover, .edit-container:hover {
+  box-shadow: 0 0 35px rgba(79, 195, 247, 0.2);
+}
+
+
+.form-group {
+  margin-bottom: 22px;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #9cc3ff;
+  text-shadow: 0 0 5px rgba(79,195,247,0.4);
+}
+
+input, select {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.05);
+  color: var(--text);
+  font-size: 16px;
+  transition: var(--transition);
+}
+
+input:focus, select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 10px rgba(79,195,247,0.3);
+  outline: none;
+}
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 25px;
+  color: var(--text);
+  background: rgba(255,255,255,0.05);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+thead {
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  color: white;
+}
+
+th, td {
+  padding: 15px;
+  text-align: left;
+}
+
+tbody tr {
+  transition: background 0.3s;
+}
+
+tbody tr:hover {
+  background: rgba(79,195,247,0.08);
+}
+
+
+.button-group {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.actions a,
+.actions button {
+  border: none;
+  padding: 8px 16px;
+  border-radius: var(--radius);
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: var(--transition);
+  color: white;
+}
+
+.btn-danger {
+  background: linear-gradient(90deg, #d30058, #de0850);
+  color: white;
+  box-shadow: 0 0 10px rgba(79,195,247,0.4);
+}
+
+.btn-primary, .btn-secondary, .btn-danger {
+  border: none;
+  padding: 10px 24px;
+  border-radius: var(--radius);
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: var(--transition);
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  color: white;
+  box-shadow: 0 0 10px rgba(79,195,247,0.4);
+}
+.btn-primary:hover {
+  box-shadow: 0 0 25px rgba(79,195,247,0.8);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: rgba(255,255,255,0.1);
+  color: #ccc;
+}
+.btn-secondary:hover {
+  background: rgba(255,255,255,0.2);
+  color: white;
+}
+
+.btn-danger {
+  background: var(--danger);
+  color: white;
+  box-shadow: 0 0 10px rgba(231,76,60,0.4);
+}
+.btn-danger:hover {
+  box-shadow: 0 0 25px rgba(231,76,60,0.8);
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 1; }
+}
+
+.empty {
+  text-align: center;
+  padding: 25px;
+  background: rgba(255,255,255,0.05);
+  border-radius: var(--radius);
+  color: var(--danger);
+  animation: pulse 2s infinite;
+  letter-spacing: 1px;
+}
