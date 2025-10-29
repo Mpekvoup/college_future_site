@@ -16,7 +16,7 @@ SECRET_KEY = os.environ.get(
 DEBUG = os.environ.get("DEBUG", "False") == "True"
 
 # Railway подставит домен сам, поэтому можно оставить звёздочку
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["*", os.environ.get("RAILWAY_PRIVATE_DOMAIN", "")]
 
 # === APPS ===
 INSTALLED_APPS = [
