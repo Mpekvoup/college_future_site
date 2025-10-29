@@ -15,6 +15,9 @@ SECRET_KEY = os.environ.get(
 )
 DEBUG = os.environ.get("DEBUG", "False") == "True"
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://collegefuturesite-production.up.railway.app",
+]
 # Railway подставит домен сам, поэтому можно оставить звёздочку
 ALLOWED_HOSTS = ["*", os.environ.get("RAILWAY_PRIVATE_DOMAIN", "")]
 
