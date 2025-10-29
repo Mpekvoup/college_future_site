@@ -1,0 +1,20 @@
+[build]
+builder = "NIXPACKS"
+
+[deploy]
+startCommand = "gunicorn college_site.wsgi"
+healthcheckPath = "/"
+healthcheckTimeout = 100
+
+[variables]
+# Версию Python лучше закрепить
+NIXPACKS_PYTHON_VERSION = "3.12"
+
+[phases.install]
+# ставим зависимости
+cmds = ["pip install --upgrade pip", "pip install -r requirements.txt"]
+
+[phases.build]
+# собираем статику
+cmds = ["python manage.py collectstatic --noinput"]
+
